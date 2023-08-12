@@ -1,5 +1,5 @@
 {
-  description = "Development Environment for cue, with vscode, haskell, bazel, nix";
+  description = "Development environment for Haskell with VSCode using Bazel inside Nix";
 
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs/nixpkgs-unstable"; };

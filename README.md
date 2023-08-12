@@ -1,21 +1,11 @@
-# Bazel inside Nix with hermetic C-toolchain
-project seed
+# Compile Haskell using Bazel inside Nix
 
-## Setup a Nix based development environment
+- started from the _Bazel inside Nix_ template github.com/beijn/baznix
 
-- install nix the better way: https://github.com/DeterminateSystems/nix-installer
-
-- basic shell flake & direnv: https://github.com/tweag/rules_nixpkgs/blob/master/guide.md
-  - installed nix-direnv: https://github.com/nix-community/nix-direnv
-  - `nix flake init`
-  - edit flake
-  - `nix flake update`
-
-## Setup Bazel inside Nix with rules_nixpkgs
-for a nix to provide bazel and a hermit c toolchain
-
-- following https://github.com/tweag/rules_nixpkgs/blob/master/guide.md
-- ! added an empty `BUILD` to repo root
-- put the content of `nixpkgs.nix` in `WORKSPACE → nixpkgs_local_repository → nix_file` **`_content`**
-
-
+## Setup rules_haskell to compile Haskell using Bazel
+- inspired by https://rules-haskell.readthedocs.io/en/latest/haskell.html 
+- and https://rules-haskell.readthedocs.io/en/latest/haskell-use-cases.html 
+- and `$ sh <(curl https://haskell.build/start) --use-nix`
+- scrapped zlib external c stuff
+- changed ghc version & stackage version
+- changed prelude to relude
